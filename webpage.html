@@ -1,0 +1,407 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kehena Beach Loft - Luxury Beachfront Retreat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 119, 182, 0.8), rgba(0, 180, 216, 0.6)),
+                        url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0077b6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #0077b6;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #0077b6;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            margin: 50px 0;
+        }
+
+        .gallery-item {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 20px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #0077b6;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0077b6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #0077b6;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .contact-item {
+            padding: 25px;
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,119,182,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about h2, .features h2, .contact h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .wave .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kehena Beach Loft</h1>
+            <p>Your Luxury Beachfront Escape</p>
+            <div class="cta-buttons">
+                <a href="https://www.airbnb.com/l/KtEbvryg" target="_blank" class="btn btn-primary">Book on Airbnb</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>Paradise Awaits</h2>
+        <p>
+            Discover the ultimate luxury beach retreat at Kehena Beach Loft. Nestled along pristine shores, 
+            our exclusive property offers breathtaking ocean views, elegant accommodations, and unparalleled 
+            tranquility. Whether you're planning a romantic getaway, a dream wedding, or a peaceful escape, 
+            experience the perfect blend of sophistication and natural beauty.
+        </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800" alt="Beach view">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800" alt="Luxury interior">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" alt="Ocean sunset">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Luxury bedroom">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800" alt="Beach sunset">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800" alt="Luxury pool">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Luxury Amenities</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌊</div>
+                    <h3>Oceanfront Views</h3>
+                    <p>Wake up to stunning panoramic views of the Pacific Ocean</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>Luxury Interiors</h3>
+                    <p>Elegantly designed spaces with premium furnishings and finishes</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏖️</div>
+                    <h3>Private Beach Access</h3>
+                    <p>Direct access to pristine Kehena Beach</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💒</div>
+                    <h3>Wedding Ready</h3>
+                    <p>Perfect venue for intimate destination weddings and celebrations</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌴</div>
+                    <h3>Tropical Paradise</h3>
+                    <p>Surrounded by lush tropical landscapes and natural beauty</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌅</div>
+                    <h3>Sunset Views</h3>
+                    <p>Breathtaking sunsets from your private lanai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Get In Touch</h2>
+        <p>Ready to book your luxury beachfront escape? Contact us today or book directly through Airbnb!</p>
+        
+        <div class="contact-info">
+            <a href="https://www.airbnb.com/l/KtEbvryg" target="_blank" class="contact-item">
+                📅 Book on Airbnb
+            </a>
+            <a href="mailto:Greg@kehenabeachloft.com" class="contact-item">
+                ✉️ Email
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025  All rights reserved.</p>
+        <p>kehenabeachloft.com</p>
+    </footer>
+</body>
+</html>
